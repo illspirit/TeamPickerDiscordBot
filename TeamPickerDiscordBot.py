@@ -4,7 +4,7 @@ from discord.ext import commands
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix='!', intents=intents)
-sides = ['Defense', 'Attack']
+sides = ['Team A', 'Team B']
 
 @client.event
 async def on_ready():
