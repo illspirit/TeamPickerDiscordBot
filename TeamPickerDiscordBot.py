@@ -4,7 +4,6 @@ from discord.ext import commands
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix='!', intents=intents)
-maps = ['Haven', 'Ascent', 'Bind', 'Icebox', 'Split', 'Breeze', 'Fracture']
 sides = ['Defense', 'Attack']
 
 @client.event
@@ -51,9 +50,8 @@ async def on_message(ctx):
         teamA_Str = '\n'.join(teamA_Names)
         teamB_Srt = '\n'.join(teamB_Names)
         embed = discord.Embed(title='Teams', description='Here are the teams. Good luck!', color=discord.Color.red())
-        embed.add_field(name='Attackers', value=teamA_Str, inline=True)
-        embed.add_field(name='Defenders', value=teamB_Srt, inline=True)
-        embed.add_field(name='Map', value=maps[random.randint(0, 3)], inline=False)
+        embed.add_field(name='Team A', value=teamA_Str, inline=True)
+        embed.add_field(name='Team B', value=teamB_Srt, inline=True)
         await ctx.channel.send(embed=embed)
 
 client.run('Insert Bot Token Here')
